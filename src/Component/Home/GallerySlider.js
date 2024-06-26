@@ -8,6 +8,8 @@ import Rock from '../../Component/Projects/Eligent/ElegantImages/park-change.png
 import swimming from '../../Component/Projects/Eligent/ElegantImages/swimm.png';
 import Gate from '../../Component/Projects/Eligent/ElegantImages/swimming.png';
 import Swim from '../../Component/Projects/Eligent/ElegantImages/rock-change.png';
+import ori from "../../images/ori1.png"
+import ori1 from "../../images/ori.png"
 
 const responsive = {
   desktop: {
@@ -28,12 +30,16 @@ const responsive = {
 };
 
 const sliderImageUrl = [
+  { url: ori1 },
+  { url: ori },
   { url: FullView },
   { url: Entrance },
   { url: Park },
   { url: Rock },
   { url: swimming },
   { url: Gate },
+  
+
   { url: Swim },
 ];
 

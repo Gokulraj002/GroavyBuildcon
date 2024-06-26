@@ -2,7 +2,7 @@ import React from "react";
 // import Banner from '../../images/banner.jpeg';
 // import About from "../../images/home.png";
 import Home from "../../images/home.png";
-import about from "../../images/about-us.jpg";
+import about from "../../images/about-us1.png";
 import Land from "../../images/land.png";
 import Service from "../../images/service.png";
 import welcome from "../../images/welcome-home.jpg";
@@ -72,7 +72,7 @@ const HomeAbout = () => {
             </div>
             <div className="col-12 col-lg-5 " data-aos="fade-down-left">
               <img
-                className="w-100 p-md-5 d-block mx-auto "
+                className="w-100 mt-md-5 d-block mx-auto "
                 src={about}
                 alt="logo"
               ></img>

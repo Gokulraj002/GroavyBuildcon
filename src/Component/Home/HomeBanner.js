@@ -23,7 +23,7 @@ const HomeBanner = () => {
             <video
               autoPlay
               muted
-              // loop
+              loop
               src={banner}
               alt="background"
               className="w-100 d-block d-md-none"

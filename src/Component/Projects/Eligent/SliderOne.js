@@ -10,9 +10,9 @@ import Home3 from "./ElegantImages/three.png";
 import Home4 from "./ElegantImages/four.png";
 import SwimRest from "./ElegantImages/five.png";
 import Home2 from "./ElegantImages/six.png";
-import House1 from "./ElegantImages/house-interior5.png";
+import ori from "../../../images/ori1.png";
 
-const sliderImages = [Home, Home1,  Home3, Home2,SwimRest, Home4,House1 ];
+const sliderImages = [ori, Home, Home1, Home3, Home2, SwimRest, Home4, ];
 
 const SliderComponent = () => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);

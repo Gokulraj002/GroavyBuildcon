@@ -154,10 +154,7 @@ const Header = () => {
                       to="#"
                       id="layoutPlanDropdown"
                       role="button"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        handleToggleOffCanvas();
-                      }}
+                    
                     >
                       project
                       <FontAwesomeIcon
