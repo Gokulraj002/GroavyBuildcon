@@ -1,30 +1,27 @@
-import React, { useState, useEffect } from "react";
-import "./HomePagePopupForm.css"; // Adjust the path as necessary
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faTimes,
-  faUser,
-  faEnvelope,
-  faPhone,
-} from "@fortawesome/free-solid-svg-icons";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import { notification } from "antd";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import './HomePagePopupForm.css'; // Adjust the path as necessary
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes, faUser, faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { notification } from 'antd';
+import { useNavigate } from 'react-router-dom';
 
 const HomePagePopupForm = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    number: "",
+    name: '',
+    email: '',
+    number: ''
   });
   const [formErrors, setFormErrors] = useState({
-    name: "",
-    email: "",
-    number: "",
+    name: '',
+    email: '',
+    number: ''
   });
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
@@ -34,20 +31,6 @@ const HomePagePopupForm = () => {
     return () => clearTimeout(timer);
   }, []);
 
-
-
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    const iframe = document.getElementById("zoho-iframe-unique");
-    iframe.onload = () => {
-      showSuccessNotification();
-      navigate("/");
-    };
-  }, [navigate]);
-
-
-
   useEffect(() => {
     setIsMounted(true);
   }, [isVisible]);
@@ -56,23 +39,29 @@ const HomePagePopupForm = () => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value,
+      [name]: value
     });
+    // Clear the error message when user starts typing again
     setFormErrors({
       ...formErrors,
-      [name]: "",
+      [name]: ''
     });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      console.log("Form Data:", formData);
+      // Form data is valid, handle submission (e.g., send data to server)
+      console.log('Form Data:', formData);
+      // Submit to Zoho CRM
       submitToZohoCRM(formData);
-      // showSuccessNotification();
+      // Show success notification
+      showSuccessNotification();
+      // Close the form
       div_hide();
     } else {
-      console.log("Form validation failed.");
+      // Form data is invalid, show validation errors
+      console.log('Form validation failed.');
     }
   };
 
@@ -80,21 +69,18 @@ const HomePagePopupForm = () => {
     const zohoForm = document.createElement("form");
     zohoForm.action = "https://crm.zoho.in/crm/WebToLeadForm";
     zohoForm.method = "POST";
-    zohoForm.target = "zoho-iframe-unique";
     zohoForm.style.display = "none";
 
     const fields = {
       // Replace with your actual Zoho CRM field names
-      xnQsjsdp:
-        "6bbcde1d55650cd0d4091f785fe2f41b382a27e29b00f75fb173fea4089b04c4",
-      xmIwtLD:
-        "dd3dd1a30e41ba7b4fd09138b5711089fa9a37882a9862302e463a01d9b3a65e7728c187018b0a768ae0d895d4146fe7",
+      xnQsjsdp: "c327c8c67a0cf05f8737eaddbefe453435ab3d7da3daa20d710d2b225c730e3f",
+      xmIwtLD: "1975de15b2e85b1db40e856c479580258c3efc6c854dcf0b78bc9e1235f1c45ea5e145dac6d77caebe4253c1330db73a",
       actionType: "TGVhZHM=",
-      Company: "Groavy", // Replace with your company name
-      "Last Name": "formData.name", // Replace with appropriate data
+      Company: "Groavy",
+      "Last Name": formData.name,
       Email: formData.email,
-      Phone: formData.number, // Assuming number corresponds to the mobile field
-      LEADCF1: "Groavy", // Replace with appropriate data
+      Mobile: formData.number, 
+      LEADCF1: "Groavy", 
     };
 
     for (const key in fields) {
@@ -110,6 +96,9 @@ const HomePagePopupForm = () => {
     document.body.appendChild(zohoForm);
     zohoForm.submit();
     document.body.removeChild(zohoForm);
+
+    // Redirect to home page after form submission
+    navigate('/');
   };
 
   const showSuccessNotification = () => {
@@ -123,25 +112,25 @@ const HomePagePopupForm = () => {
   const validateForm = () => {
     let valid = true;
     const newErrors = {
-      name: "",
-      email: "",
-      number: "",
+      name: '',
+      email: '',
+      number: ''
     };
 
     // Basic validation rules (you can expand this)
     if (!formData.name.trim()) {
-      newErrors.name = "Name is required";
+      newErrors.name = 'Name is required';
       valid = false;
     }
     if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
+      newErrors.email = 'Email is required';
       valid = false;
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Email is invalid";
+      newErrors.email = 'Email is invalid';
       valid = false;
     }
     if (!formData.number.trim()) {
-      newErrors.number = "Number is required";
+      newErrors.number = 'Number is required';
       valid = false;
     }
 
@@ -156,23 +145,13 @@ const HomePagePopupForm = () => {
   };
 
   return (
-    <div id="bodysoda" style={{ overflow: isVisible ? "hidden" : "auto" }}>
+    <div id="bodysoda" style={{ overflow: isVisible ? 'hidden' : 'auto' }}>
       {isVisible && (
-        <div id="abc" className="p-3 p-md-0" style={{ display: "flex" }}>
-          <div
-            id="popupContact"
-            data-aos={isMounted ? "zoom-in" : ""}
-            data-aos-once="true"
-          >
+        <div id="abc" className='p-3 p-md-0' style={{ display: 'flex' }}>
+          <div id="popupContact" data-aos={isMounted ? 'zoom-in' : ''} data-aos-once="true">
             <form id="popupform" onSubmit={handleSubmit} name="form">
-              <FontAwesomeIcon
-                icon={faTimes}
-                id="close"
-                className="text-black"
-                data-aos="zoom-out"
-                onClick={div_hide}
-              />
-              <h2 className="text-center">Reach out to us</h2>
+              <FontAwesomeIcon icon={faTimes} id="close" className='text-black' data-aos="zoom-out" onClick={div_hide} />
+              <h2 className='text-center'>Reach out to us</h2>
               <hr />
               <div className="input-container">
                 <FontAwesomeIcon icon={faUser} className="input-icon" />
@@ -184,9 +163,7 @@ const HomePagePopupForm = () => {
                   value={formData.name}
                   onChange={handleChange}
                 />
-                {formErrors.name && (
-                  <span className="error">{formErrors.name}</span>
-                )}
+                {formErrors.name && <span className="error">{formErrors.name}</span>}
               </div>
               <div className="input-container">
                 <FontAwesomeIcon icon={faEnvelope} className="input-icon" />
@@ -198,9 +175,7 @@ const HomePagePopupForm = () => {
                   value={formData.email}
                   onChange={handleChange}
                 />
-                {formErrors.email && (
-                  <span className="error">{formErrors.email}</span>
-                )}
+                {formErrors.email && <span className="error">{formErrors.email}</span>}
               </div>
               <div className="input-container">
                 <FontAwesomeIcon icon={faPhone} className="input-icon" />
@@ -212,16 +187,10 @@ const HomePagePopupForm = () => {
                   value={formData.number}
                   onChange={handleChange}
                 />
-                {formErrors.number && (
-                  <span className="error">{formErrors.number}</span>
-                )}
+                {formErrors.number && <span className="error">{formErrors.number}</span>}
               </div>
-              <button className="popupsubmit" type="submit" id="submitpopup">
-                Send
-              </button>
+              <button className='popupsubmit' type="submit" id="submitpopup">Send</button>
             </form>
-      <iframe id="zoho-iframe-unique" name="zoho-iframe-unique" title="zoho-iframe" className="hidden-iframe" style={{ display: 'none' }}></iframe>
-
           </div>
         </div>
       )}

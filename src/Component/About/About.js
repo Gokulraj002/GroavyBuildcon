@@ -21,10 +21,8 @@ const About = () => {
   <img src={image} alt="about-banner" className="w-100" height={'380px'}/>
 </picture>
       
-    {/* <img src={image} alt="about-banner" className="w-100" />  */}
   <div className="position-absolute top-50 start-50 translate-middle">
-    {/* <div className="text-center"> */}
-    {/* <p className="para-color font text-white text-center">grow together</p> */}
+
 
     <h2 id="head" className="text-white text-center">
               <FontAwesomeIcon

@@ -1,29 +1,18 @@
 import React from 'react';
 import { Form, Input, Button, message, notification } from 'antd';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
+
 const { TextArea } = Input;
-import { useNavigate } from "react-router-dom";
 
 const Cfrom = () => {
-
-
   const [form] = Form.useForm();
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const onFinish = (values) => {
     console.log("Form values:", values);
     submitToZohoCRM(values);
     form.resetFields();
   };
-  const navigate = useNavigate();
-  
-  useEffect(() => {
-    const iframe = document.getElementById('zoho-iframe-unique');
-    iframe.onload = () => {
-      showSuccessNotification();
-      navigate('/contact');
-    };
-  }, [navigate]);
-
-
 
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
@@ -34,22 +23,17 @@ const Cfrom = () => {
     const zohoForm = document.createElement("form");
     zohoForm.action = "https://crm.zoho.in/crm/WebToLeadForm";
     zohoForm.method = "POST";
-    zohoForm.target = "zoho-iframe-unique";
     zohoForm.style.display = "none";
 
     const fields = {
-      xnQsjsdp: "6bbcde1d55650cd0d4091f785fe2f41b382a27e29b00f75fb173fea4089b04c4",
-      xmIwtLD: "dd3dd1a30e41ba7b4fd09138b5711089fa9a37882a9862302e463a01d9b3a65e7728c187018b0a768ae0d895d4146fe7",
+      xnQsjsdp: "c327c8c67a0cf05f8737eaddbefe453435ab3d7da3daa20d710d2b225c730e3f",
+      xmIwtLD: "1975de15b2e85b1db40e856c479580258c3efc6c854dcf0b78bc9e1235f1c45ea5e145dac6d77caebe4253c1330db73a",
       actionType: "TGVhZHM=",
-      // returnURL: "",
-      Company: "Groavy",  // Explicitly set the company field here
-      'Last Name': "formData.firstName",
+      Company: "Groavy",
+      'Last Name': formData.firstName,
       Email: formData.email,
-      Phone: formData.phone,
-      LEADCF1: "GroavyContactForm",
-
-      // Description: formData.message,
-      // Subject: formData.subject  // add subject field
+      Mobile: formData.phone,
+      LEADCF1: "Groavy",
     };
 
     for (const key in fields) {
@@ -66,6 +50,9 @@ const Cfrom = () => {
     zohoForm.submit();
     document.body.removeChild(zohoForm);
     showSuccessNotification();
+
+    // Redirect to contact page after form submission
+    navigate('/contact');
   };
 
   const showSuccessNotification = () => {
@@ -119,9 +106,9 @@ const Cfrom = () => {
 
         <div className="col-12 col-lg-6 ">
           <Form.Item
-            name="phone*"
+            name="phone"
             rules={[
-              { required: true, message: "Please enter your  number!" },
+              { required: true, message: "Please enter your number!" },
               { pattern: /^[0-9]{10}$/, message: "Phone number must be 10 digits long." }
             ]}
           >
@@ -136,7 +123,6 @@ const Cfrom = () => {
           <Form.Item
             name="subject"
             rules={[
-              // { required: true, message: "Please enter the subject!" },
               { min: 2, message: "Subject must be at least 2 characters long." },
               { max: 50, message: "Subject cannot be longer than 50 characters." }
             ]}
@@ -152,7 +138,6 @@ const Cfrom = () => {
           <Form.Item
             name="message"
             rules={[
-              // { required: true, message: "Please Enter your message!" },
               { min: 10, message: "Message must be at least 10 characters long." },
               { max: 500, message: "Message cannot be longer than 500 characters." }
             ]}
@@ -176,8 +161,6 @@ const Cfrom = () => {
           </Form.Item>
         </div>
       </Form>
-      <iframe id="zoho-iframe-unique" name="zoho-iframe-unique" title="zoho-iframe" className="hidden-iframe" style={{ display: 'none' }}></iframe>
-
     </div>
   );
 };
