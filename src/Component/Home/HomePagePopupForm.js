@@ -51,14 +51,7 @@ const HomePagePopupForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      // Form data is valid, handle submission (e.g., send data to server)
-      console.log('Form Data:', formData);
-      // Submit to Zoho CRM
       submitToZohoCRM(formData);
-      // Show success notification
-      showSuccessNotification();
-      // Close the form
-      div_hide();
     } else {
       // Form data is invalid, show validation errors
       console.log('Form validation failed.');
@@ -73,14 +66,14 @@ const HomePagePopupForm = () => {
 
     const fields = {
       // Replace with your actual Zoho CRM field names
-      xnQsjsdp: "c327c8c67a0cf05f8737eaddbefe453435ab3d7da3daa20d710d2b225c730e3f",
-      xmIwtLD: "1975de15b2e85b1db40e856c479580258c3efc6c854dcf0b78bc9e1235f1c45ea5e145dac6d77caebe4253c1330db73a",
+      xnQsjsdp: "4c2592e970d6535485d1197226d23d33764a78aa6cb88affc745a5cb982a35d7",
+      xmIwtLD: "049239acd7223d3630552088db3ad6f3cadf4556f83138c7d625cc5fbbcc16fffc3ba63140da3c3a2ef2da15895b8a77",
       actionType: "TGVhZHM=",
       Company: "Groavy",
       "Last Name": formData.name,
       Email: formData.email,
-      Mobile: formData.number, 
-      LEADCF1: "Groavy", 
+      Mobile: formData.number,
+      LEADCF1: "Groavy",
     };
 
     for (const key in fields) {
@@ -97,6 +90,10 @@ const HomePagePopupForm = () => {
     zohoForm.submit();
     document.body.removeChild(zohoForm);
 
+    // Show success notification
+    showSuccessNotification();
+    // Close the form
+    div_hide();
     // Redirect to home page after form submission
     navigate('/');
   };
