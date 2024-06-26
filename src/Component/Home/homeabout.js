@@ -1,13 +1,11 @@
 import React from "react";
 // import Banner from '../../images/banner.jpeg';
 // import About from "../../images/home.png";
-
 import Home from "../../images/home.png";
 import about from "../../images/about-us.jpg";
 import Land from "../../images/land.png";
 import Service from "../../images/service.png";
 import welcome from "../../images/welcome-home.jpg";
-
 const HomeAbout = () => {
   return (
     <>

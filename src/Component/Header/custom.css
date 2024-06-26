@@ -148,7 +148,7 @@
   .dropdown-menu {
     position: static;
     display: none;
-    width: 50%;
+    /* width: 50%; */
     margin: auto;
     transition: opacity 0.3s ease, visibility 0.3s ease;
   }

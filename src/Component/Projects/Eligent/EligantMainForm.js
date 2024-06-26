@@ -48,7 +48,7 @@ const EligantMainForm = ({ onSubmitSuccess }) => {
       whatsapp: "",
       email: "",
     });
-    showSuccessNotification();
+    // showSuccessNotification();s
 
     onSubmitSuccess();
   };
@@ -61,8 +61,8 @@ const EligantMainForm = ({ onSubmitSuccess }) => {
     zohoForm.style.display = "none";
     
     const fields = {
-      xnQsjsdp: "51d1b7d70f6496d530298f3d1a311f687c02a545169ec3b6980488f9dc970451",
-      xmIwtLD: "b4d8bf301a33164f04660bca49ec5732d6f1c0866eadb0e8f2b08661ba2dd2cdacfcca1bc36066d1f0981d70600fab33",
+      xnQsjsdp: "491d01328dd70a22215cbeb85f0311dbca6dba26d8809615e4025f427618b43d",
+      xmIwtLD: "24d78cb7f7b1f8878b35e02b69d82431488979152eff5d927704a27765ddfe206427e8a463bba71ebb390a4e381589f3",
       actionType: "TGVhZHM=",
       Company: "Groavy",
       // "First Name": formData.name,

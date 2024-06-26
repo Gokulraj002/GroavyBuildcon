@@ -4,12 +4,18 @@ import EligantMainForm from "./EligantMainForm";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import LayoutImage from "./ElegantImages/elegant-main.jpg";
+import ReactGA from "react-ga4"; // Import ReactGA
 
 
 const EligantForm = () => {
   const [showModal, setShowModal] = React.useState(false);
 
   const handleEnquiryClick = () => {
+    ReactGA.event({
+      category: "Button Click",
+      action: "Download Brochure Clicked",
+      label: "Download Brochure Button",
+    });
     setShowModal(true);
   };
   const handleFormSubmitSuccess = () => {

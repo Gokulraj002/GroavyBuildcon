@@ -6,6 +6,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { notification } from 'antd';
 import { useNavigate } from 'react-router-dom';
+import ReactGA from 'react-ga4'; // Import ReactGA
 
 const HomePagePopupForm = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -27,6 +28,11 @@ const HomePagePopupForm = () => {
     AOS.init({ duration: 1000 });
     const timer = setTimeout(() => {
       setIsVisible(true);
+      ReactGA.event({
+        category: 'Popup',
+        action: 'Popup Displayed',
+        label: 'HomePage Popup Form',
+      });
     }, 2000);
     return () => clearTimeout(timer);
   }, []);
@@ -66,8 +72,8 @@ const HomePagePopupForm = () => {
 
     const fields = {
       // Replace with your actual Zoho CRM field names
-      xnQsjsdp: "4c2592e970d6535485d1197226d23d33764a78aa6cb88affc745a5cb982a35d7",
-      xmIwtLD: "049239acd7223d3630552088db3ad6f3cadf4556f83138c7d625cc5fbbcc16fffc3ba63140da3c3a2ef2da15895b8a77",
+      xnQsjsdp: "7f84793891d1c0d2c010b0619057fdc6f7f20f7b445f641a2f9728700ec74b8e",
+      xmIwtLD: "cbd0c4fb585428814e057b6ef3e8f4be75c74368bf3760603706e1c70201fa2d962b0b548a9a5782ed5d378c969a7807",
       actionType: "TGVhZHM=",
       Company: "Groavy",
       "Last Name": formData.name,

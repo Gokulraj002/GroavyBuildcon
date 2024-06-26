@@ -6,6 +6,7 @@ import Testimonials from "./Testimonials";
 import "./home.css";
 import HomeBanner from "./HomeBanner";
 import HomePagePopupForm from "./HomePagePopupForm";
+import HomeProjects from "./HomeProjects";
 // import Form from "./Form";
 // import Forms from "./Form";
 
@@ -15,6 +16,7 @@ const Homes = () => {
       <HomeBanner/>
       <HomeAbout />
       <Weoffer/>
+      <HomeProjects/>
       <Slider/>
       <Testimonials/>
       <HomePagePopupForm/>

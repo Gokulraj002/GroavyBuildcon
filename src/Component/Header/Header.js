@@ -3,19 +3,19 @@ import { Link, Outlet, useLocation } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import logo from "../../images/logo size.png";
-import ReactGA from "react-ga4"; // Import react-ga4
+import ReactGA from "react-ga4";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faPhone } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
-
   const [navClass, setNavClass] = useState(
     isHomePage
       ? "navbar navbar-expand-lg ooo navbar-dark w-100 p-3 header-nav scrolled blur"
       : "navbar navbar-expand-lg ooo navbar-dark w-100 bg p-3 scrolled "
   );
+  const [isOffCanvasOpen, setIsOffCanvasOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,7 +40,6 @@ const Header = () => {
         : "navbar navbar-expand-lg ooo bg navbar-dark w-100 p-3"
     );
 
-    // Scroll to top when a new location is opened
     window.scrollTo(0, 0);
 
     return () => {
@@ -55,14 +54,16 @@ const Header = () => {
       label: `${label} Page`,
     });
 
-    //    if (window.innerWidth < 768) {
-    //   const offcanvasElement = document.getElementById("offcanvasNavbar");
-    //   if (offcanvasElement) {
-    //     const offcanvas = new window.bootstrap.Offcanvas(offcanvasElement);
-    //     offcanvas.hide();
-    //   }
-    // }
+    if (window.innerWidth < 768) {
+      // Close offcanvas menu if open
+      setIsOffCanvasOpen(false);
+    }
   };
+
+  const handleToggleOffCanvas = () => {
+    setIsOffCanvasOpen(!isOffCanvasOpen);
+  };
+
   const handlePhoneCall = () => {
     window.location.href = "tel:6366829999";
   };
@@ -83,15 +84,15 @@ const Header = () => {
             <button
               className="navbar-toggler"
               type="button"
-              data-bs-toggle="offcanvas"
-              data-bs-target="#offcanvasNavbar"
-              aria-controls="offcanvasNavbar"
+              onClick={handleToggleOffCanvas}
             >
               <span className="navbar-toggler-icon"></span>
             </button>
 
             <div
-              className="offcanvas offcanvas-start text-center w-75"
+              className={`offcanvas offcanvas-start text-center w-75 ${
+                isOffCanvasOpen ? "show" : ""
+              }`}
               tabIndex="-1"
               id="offcanvasNavbar"
               aria-labelledby="offcanvasNavbarLabel"
@@ -100,14 +101,17 @@ const Header = () => {
                 <Link
                   className="navbar-brand"
                   to="/"
-                  onClick={() => handleNavClick("Home")}
+                  onClick={() => {
+                    handleNavClick("Home");
+                    handleToggleOffCanvas();
+                  }}
                 >
                   <img src={logo} alt="logo" width="130px" />
                 </Link>
                 <button
                   type="button"
                   className="btn-close"
-                  data-bs-dismiss="offcanvas"
+                  onClick={handleToggleOffCanvas}
                   aria-label="Close"
                 ></button>
               </div>
@@ -120,7 +124,10 @@ const Header = () => {
                         isHomePage ? "fw-bold " : ""
                       } ${location.pathname === "/" ? "active" : ""}`}
                       to="/"
-                      onClick={() => handleNavClick("Home")}
+                      onClick={() => {
+                        handleNavClick("Home");
+                        handleToggleOffCanvas();
+                      }}
                     >
                       home
                     </Link>
@@ -131,7 +138,10 @@ const Header = () => {
                         isHomePage ? "fw-bold" : ""
                       } ${location.pathname === "/about" ? "active" : ""}`}
                       to="/about"
-                      onClick={() => handleNavClick("About Us")}
+                      onClick={() => {
+                        handleNavClick("About Us");
+                        handleToggleOffCanvas();
+                      }}
                     >
                       about us
                     </Link>
@@ -144,17 +154,17 @@ const Header = () => {
                       to="#"
                       id="layoutPlanDropdown"
                       role="button"
-                      // data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                      onClick={(e) => e.preventDefault()}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleToggleOffCanvas();
+                      }}
                     >
                       project
                       <FontAwesomeIcon
-                        icon={faChevronDown}style={{  fontSize: '0.6em' }}
+                        icon={faChevronDown}
+                        style={{ fontSize: "0.6em" }}
                         className="ms-1 fs-6"
-                      />{" "}
-                      {/* Add the icon here */}
-                      
+                      />
                     </Link>
                     <ul
                       className="dropdown-menu"
@@ -170,7 +180,10 @@ const Header = () => {
                               : ""
                           }`}
                           to="/elegantorchards"
-                          onClick={() => handleNavClick("Elegant")}
+                          onClick={() => {
+                            handleNavClick("Elegant");
+                            handleToggleOffCanvas();
+                          }}
                         >
                           elegant orchards estate
                         </Link>
@@ -183,26 +196,14 @@ const Header = () => {
                             location.pathname === "/Upcomming" ? "active" : ""
                           }`}
                           to="/Upcomming"
-                          onClick={() => handleNavClick("Upcomming")}
+                          onClick={() => {
+                            handleNavClick("Upcomming");
+                            handleToggleOffCanvas();
+                          }}
                         >
                           Upcomming
                         </Link>
                       </li>
-                      {/* <li>
-                        <Link
-                          className={`dropdown-item  ${
-                            isHomePage ? "fw-bold" : ""
-                          }${
-                            location.pathname === "/layout/option3"
-                              ? "active"
-                              : ""
-                          }`}
-                          to="/layout/option3"
-                          onClick={() => handleNavClick('Option 3')}
-                        >
-                          Option 3
-                        </Link>
-                      </li> */}
                     </ul>
                   </li>
                   <li className="nav-item">
@@ -211,7 +212,10 @@ const Header = () => {
                         isHomePage ? "fw-bold" : ""
                       } ${location.pathname === "/service" ? "active" : ""}`}
                       to="/service"
-                      onClick={() => handleNavClick("Services")}
+                      onClick={() => {
+                        handleNavClick("Services");
+                        handleToggleOffCanvas();
+                      }}
                     >
                       services
                     </Link>
@@ -222,7 +226,10 @@ const Header = () => {
                         isHomePage ? "fw-bold" : ""
                       } ${location.pathname === "/contact" ? "active" : ""}`}
                       to="/contact"
-                      onClick={() => handleNavClick("Contact Us")}
+                      onClick={() => {
+                        handleNavClick("Contact Us");
+                        handleToggleOffCanvas();
+                      }}
                     >
                       contact us
                     </Link>
