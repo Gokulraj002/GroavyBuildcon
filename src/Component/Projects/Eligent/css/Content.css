@@ -1,0 +1,48 @@
+.key-features {
+    padding-left: 0;
+    list-style: none;
+  }
+  
+  .key-features li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .key-features li svg {
+    margin-right: 10px;
+    color: #007bff;
+  }
+  
+  
+  .btn-primary {
+    margin-top: 20px;
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Text color */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3; /* Change color on hover */
+  }
+  
+
+  #modal-skew-from-left {
+    top: 50%;
+    left: 50;
+    transform: skewX(40deg) translate(-200%, -50%);
+    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Animation out */
+  }
+  
+  #modal-skew-from-left {
+    left: 50%;
+    transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1); /* Animation in */
+    transform: translate(-50%, -50%) skewX(0deg);
+  }
+  
+  

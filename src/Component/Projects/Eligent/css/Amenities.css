@@ -1,0 +1,46 @@
+
+.amenities-bg {
+    background-color: #f0f8ff;
+  }
+  
+  .amenity-card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    background-color: #ffffff; 
+    border-radius: 10px; 
+  }
+  
+  .amenity-card:hover {
+    transform: translateY(-10px);
+  }
+  
+
+  .icon-color {
+    color: #F9AB24; 
+  }
+
+  .amenity-card .card-title {
+    font-weight: bold;
+    color: #343a40;
+  }
+  
+
+  .amenity-card .card-text {
+    color: #6c757d; 
+  }
+  
+  
+
+  .font1.color {
+    color: #007bff; 
+    font-family: 'Arial', sans-serif; 
+  }
+  
+ 
+  @media (max-width: 576px) {
+    .amenity-card {
+      margin-bottom: 20px;
+    }
+  }
+  

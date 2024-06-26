@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+
+
+.color{
+  color: #F9AB24 !important;
+}
+.color1{
+  color: #C1E74B !important;
+}
+
+.font {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.justify {
+  text-align: justify;
+}
+/* 
+h2 {
+  margin: 0 0 20px;
+} */
+
+
+/* .testimonial{
+  background: #255946;
+  background-image: url('https://kshethralifespaces.com/wp-content/uploads/2020/12/video-bg.png');
+  background-size: 100%;
+} */
+
+.animated-icon {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-20px);
+  }
+
+  60% {
+    transform: translateY(-10px);
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+
+  .font1 {
+    font-family: "EB Garamond", serif;
+    font-size: 52px;
+    font-weight: 700;
+
+  }
+  .hero-content {
+    z-index: 1;
+    /* position: absolute; */
+    top: 60%;
+    left: 50%;
+    color: #FFFFFF;
+  }
+  .font{
+    font-family: 'Inter' !important;
+    font-variant: small-caps;
+    font-size: 20px;
+  }
+
+}
+@media (max-width: 768px) {
+  .fon{
+    font-size: 30px;
+  }
+  .icon-before,
+  .icon-after {
+    font-size: 25px;
+    color: rgba(168, 50, 56, 0.938);
+  }
+
+  .header-image {
+    background: url('../../images/banner-home.jpg');
+    height: 500px;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+  }
+
+  .hero-content {
+    z-index: 1;
+    /* position: absolute; */
+    top: 50%;
+    left: 50%;
+    color: #FFFFFF;
+  }
+
+  .font{
+    font-family: 'Inter' !important;
+    font-variant: small-caps;
+    font-size: 19px;
+    text-shadow: 3px 4px 3px black;
+
+  }
+
+  #head {
+    font-family: "EB Garamond", serif;
+    font-size: 35px;
+    text-shadow: 3px 4px 5px black;
+
+  }
+
+
+}
+
+@media (min-width: 992px) {
+
+  .icon-before,
+  .icon-after {
+    font-size: 36px;
+    color: rgba(201, 49, 56, 0.938);
+  }
+
+  .font1 {
+    font-family: "EB Garamond", serif;
+    font-size: 62px;
+    font-weight: 700;
+
+  }
+  .font11 {
+    font-family: "EB Garamond", serif;
+    font-size: 52px;
+    font-weight: 700;
+
+  }
+
+  .font2 {
+    font-family: "EB Garamond", serif;
+    font-size: 32px;
+    color: #c1e74b ;
+    font-weight: 700;
+  }
+  .hero-content {
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    color: #FFFFFF;
+    text-align: center;
+  }
+
+  #head {
+    font-family: "EB Garamond", serif;
+    font-size: 70px;
+    font-weight: 700;
+    text-shadow: 6px 7px 6px black;
+  }
+
+  .font {
+    font-family: 'Inter' !important;
+    font-variant: small-caps;
+    font-size: 20px;
+    text-shadow: 3px 4px 5px black;
+  }
+  .test-font{
+    font-size: 18px;
+  }
+
+
+}

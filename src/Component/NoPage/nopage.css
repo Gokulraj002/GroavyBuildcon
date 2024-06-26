@@ -1,0 +1,32 @@
+.error-page {
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .error-page h1 {
+    font-size: 10rem;
+    font-weight: bold;
+    color: #f59b25;
+  }
+  
+  .error-page p {
+    font-size: 1.5rem;
+    color: #555;
+  }
+  
+  .error-page .btn-primary {
+    background-color: #f59b25;
+    border: none;
+  }
+  
+  .error-page .btn-primary:hover {
+    background-color:#d87d1d;
+}

@@ -1,0 +1,148 @@
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+.user-box {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.user-box input,
+.user-box textarea {
+  border: 1px solid rgb(167, 165, 165);
+  background: rgb(167, 165, 165);
+  border-radius: 30px !important;
+  outline: none;  
+  width: 100%;
+  padding: 1rem 2rem;
+  transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+  color: white !important;
+}
+
+.user-box label {
+  position: absolute;
+  top: 1rem;
+  left: 2rem;
+  padding: 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.user-box input:focus ~ label,
+.user-box textarea:focus ~ label {
+  top: -25px;
+  left: 2rem;
+  color: #a8a8a8;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.user-box input:not(:placeholder-shown) ~ label,
+.user-box textarea:not(:placeholder-shown) ~ label {
+  top: -20px;
+  left: 2rem;
+  color: #bdb8b8;
+  font-size: 12px;
+}
+
+.user-box input:focus::placeholder,
+.user-box textarea:focus::placeholder {
+  color: rgba(255, 255, 255, 0.7); /* Show the placeholder with some transparency */
+}
+
+.user-box input::placeholder,
+.user-box textarea::placeholder {
+  color: transparent; /* Hide the placeholder text by default */
+}
+
+#contact:focus, #area:focus {
+  border-color: #3a6958;
+  background-color: rgb(196, 191, 191);
+}
+
+#contact:hover, #area:hover {
+  background-color: rgb(196, 191, 191);
+}
+
+
+
+@keyframes animateClr {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.btn-send-message {
+  background-color: #07251e !important;
+  border-color: #07251e;
+  color: #fff;
+  padding: 15px 30px;
+  font-size: 16px;
+  border-radius: 25px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-send-message:hover {
+  background-color: #166553 !important;
+  color: whitesmoke !important;
+}
+
+.ant-form-item-label > label {
+  display: none; 
+}
+
+/* Add animations for form fields */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.user-box input,
+.user-box textarea {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.user-box label {
+  animation: slideIn 0.5s ease-in-out;
+}
+
+.aside ul li {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+
+.contact-containerfluid{
+  background-image: url('../../images/contact-back.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center top;
+}
+.contact-container{
+   background-color: rgb(0 ,0 ,0 ,0.8);
+}

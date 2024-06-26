@@ -1,0 +1,476 @@
+/* #Eligent-input {
+    border-radius: 0px !important;
+    border: 1px solid rgb(126, 125, 125);
+}
+.flag-dropdown{
+  border: 1px solid rgb(126, 125, 125);
+}
+
+.react-tel-input .form-control {
+    
+    padding: 25px 50px ;
+    width: 100%;
+  }
+.paddin{
+  padding: 14px;
+} */
+
+.btn-submit {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding:24px;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+.btn-submit:hover {
+background-color:#255946 !important;
+}
+
+.btn-submit .arrow {
+  margin-right:10px;
+}
+
+
+.nearby-location-item {
+    
+  /* padding: 1.5rem;
+  margin: 1rem 0; */
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.nearby-location-item:hover {
+  
+  box-shadow: 1px 2px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nearby-location-icon {
+  color: #da3b3b;
+}
+
+/* .nearby-location-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+} */
+
+/* .nearby-location-time {
+  color: #6c757d;
+  font-size: 0.9rem;
+} */
+
+
+
+/* .nearby-location-list li {
+  list-style-type: none;
+  margin: 0.5rem 0;
+  margin-left: auto;
+  margin-right:auto;
+} */
+
+
+.button-48 {
+  appearance: none;
+  background-color: #a5df6a;
+  border-width: 0;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Clarkson,Helvetica,sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1em;
+  margin: 0;
+  opacity: 1;
+  outline: 0;
+  padding: 1.5em 2.2em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-rendering: geometricprecision;
+  text-transform: uppercase;
+  transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1),background-color 100ms cubic-bezier(.694, 0, 0.335, 1),color 100ms cubic-bezier(.694, 0, 0.335, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.button-48:before {
+  animation: opacityFallbackOut .5s step-end forwards;
+  backface-visibility: hidden;
+  background-color: #255946;
+  /* color: rgb(255, 255, 255); */
+  clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: translateZ(0);
+  transition: clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1), -webkit-clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1);
+  width: 100%;
+}
+
+.button-48:hover:before {
+  animation: opacityFallbackIn 0s step-start forwards;
+  clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+ 
+}
+.button-48:hover span {
+ color: #FFFFFF;
+}
+.button-48:after {
+  background-color: #FFFFFF;
+  
+}
+
+.button-48 span {
+  z-index: 1;
+  position: relative;
+  
+}
+.button-48 span:hover{
+      color:#FFFFFF;
+}
+
+
+
+
+
+/* sasi edit code */
+
+.custom-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(204, 21, 21, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+}
+
+.custom-modal.fade-in {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease, visibility 0s linear;
+}
+
+
+.custom-modal.fade-in .custom-modal-content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.custom-modal.fade-out .custom-modal-content {
+  transform: translateY(100px); 
+  opacity: 0;
+}
+
+
+
+
+
+
+:root {
+  --primary-color: #3F5EFB;
+  --secondary-color: #FC466B;
+  --white: rgba(255, 255, 255, 0.3);
+  --drop-bg: rgba(255, 255, 255, 0.1);
+  --drop-border: rgba(255, 255, 255, 0.3);
+  --box-shadow: rgba(0, 0, 0, 0.2)
+}
+
+/* body {
+  font-family: 'Montserrat', sans-serif;
+} */
+
+
+
+#eligantform {
+  /* background: var(--white); */
+  background-color: #056161;
+  padding: 3em;
+   border-radius: 50px;
+ /* border-left: 1px solid var(--white);
+  border-top: 1px solid var(--white);
+  backdrop-filter: blur(10px); */
+  box-shadow: 20px 20px 40px -6px var(--box-shadow);
+  /* text-align: center; */
+  transition: all 0.2s ease-in-out;
+}
+
+#eligantform p {
+  font-weight: 500;
+  color: #fff;
+  opacity: 0.8;
+  font-size: 1.4rem;
+  margin-top: 0;
+  
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px var(--box-shadow);
+}
+
+#eligantform input {
+  background: #ffffff;
+  width: 100%;
+  padding: 1em 2rem;
+  margin-bottom: 2em;
+  border: none;
+  border-left: 1px solid var(--white);
+  border-top: 1px solid var(--white);
+  border-radius: 50px;
+  /* backdrop-filter: blur(5px); */
+  box-shadow: 4px 4px 60px var(--box-shadow);
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  /* text-shadow: 2px 2px 4px var(--box-shadow); */
+}
+
+#eligantform input:hover {
+  /* background: rgba(255, 255, 255, 0.5); */
+  box-shadow: 4px 4px 60px 8px var(--box-shadow);
+  color:rgb(250, 44, 44);
+}
+
+#eligantform input:hover::placeholder {
+  color:#F9AB24;
+  /* color: rgba(250, 44, 44, 0.5); */
+}
+
+#eligantform input:focus::placeholder {
+  color:#030303;
+  /* color: rgba(250, 44, 44, 0.7);  */
+}
+
+#eligantform input[type="text"]:focus,
+#eligantform input[type="tel"]:focus,
+#eligantform input[type="email"]:focus {
+  background: white;
+  color: #000000;
+  box-shadow: 4px 4px 60px 8px var(--box-shadow);
+}
+
+
+#eligantform .eligentformsubmit {
+  margin-top: 10px;
+  width: 150px;
+  font-size: 1rem;
+  cursor: pointer;
+  background: var(--drop-bg);
+  background: #000000;
+  border: none;
+  border-radius: 4px;
+  padding: 1em;
+  box-shadow: 4px 4px 60px var(--box-shadow);
+  transition: all 0.2s ease-in-out;
+  color: #fff;
+  text-shadow: 2px 2px 4px var(--box-shadow);
+}
+
+#eligantform .eligentformsubmit:hover {
+  background-color: rgba(7, 7, 7, 0.6);
+}
+
+#eligantform .eligentformsubmit:active {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* #eligantform:hover {
+  margin: 4px;
+} */
+
+::placeholder {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  color:#201d1d;
+  text-shadow: 2px 2px 4px var(--box-shadow);
+}
+.modal-body
+{
+  padding:0px !important;
+  /* width: 500px; */
+  
+}
+.modal-content{
+  /* background: #056161 ; */
+  /* border-radius: 50px; */
+  /* width: 600px; */
+
+}
+
+
+.form-group label{
+  color: #fff;
+  padding-bottom: 8px;
+}
+/* 
+.drops {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -2;
+}
+
+.drop {
+  background: var(--drop-bg);
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+  border-left: 1px solid var(--drop-border);
+  border-top: 1px solid var(--drop-border);
+  box-shadow: 10px 10px 60px -8px var(--box-shadow);
+  position: absolute;
+  transition: all 0.2s ease;
+}
+
+.drop-1 {
+  height: 80px;
+  width: 80px;
+  top: -30px;
+  left: -40px;
+  z-index: -1;
+}
+
+.drop-2 {
+  height: 80px;
+  width: 80px;
+  bottom: -30px;
+  right: -10px;
+}
+
+.drop-3 {
+  height: 100px;
+  width: 100px;
+  bottom: 120px;
+  right: -50px;
+  z-index: -1;
+}
+
+.drop-4 {
+  height: 120px;
+  width: 120px;
+  top: -60px;
+  right: -60px;
+}
+
+.drop-5 {
+  height: 60px;
+  width: 60px;
+  bottom: 170px;
+  left: 90px;
+  z-index: -1;
+} */
+
+a,
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animated {
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}
+
+.fadeInUp {
+  animation-name: fadeInUp;
+}
+
+
+@keyframes fadeInMoveTop {
+  0%, 100% {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInMoveBottom {
+  0%, 100% {
+    opacity: 1;
+    transform: translateY(2px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInMoveLeft {
+  0%, 100% {
+    opacity: 1;
+    transform: translateX(-2px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInMoveRight {
+  0%, 100% {
+    opacity: 1;
+    transform: translateX(2px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Applying animations with looped movement to each drop */
+.drop-1 {
+  animation: fadeInMoveTop 2s ease infinite;
+}
+
+.drop-2 {
+  animation: fadeInMoveBottom 3s ease infinite;
+}
+
+.drop-3 {
+  animation: fadeInMoveLeft 1s ease infinite;
+}
+
+.drop-4 {
+  animation: fadeInMoveRight 1.5s ease infinite;
+}
+
+.drop-5 {
+  animation: fadeInMoveTop 2.5s ease infinite;
+}
+
