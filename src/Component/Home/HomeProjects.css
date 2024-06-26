@@ -66,4 +66,20 @@
     color: #fff;
     text-decoration: none;
   }
- 
+
+
+
+  @media (max-width: 768px) {
+    .customs-card-body {
+      position: absolute;
+      bottom: -12%;
+      width: 100%;
+      /* padding: 10px; */
+      background: rgba(0, 0, 0, 0.2); 
+      transition: bottom 1s ease, opacity 0.3s ease;
+      /* opacity: 0; */
+    }
+    .poda{
+      filter: blur(1.5px);
+    }
+ }

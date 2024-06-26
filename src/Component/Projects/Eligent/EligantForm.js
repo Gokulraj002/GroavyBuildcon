@@ -33,7 +33,7 @@ const EligantForm = () => {
       <div className="container-fluid py-md-5 py-3 bg-light">
         <div className="container">
           <div className="row">
-            <div className="col-12 col-lg-6  p-lg-3">
+            <div className="col-12 col-lg-6 p-lg-3">
               <h2 className="color">Luxury Farm Sale in Chikkaballapura</h2>
               <p className="justify para-color">
                 Find a large 28-acre estate with 5,700 and 10,000 square foot in

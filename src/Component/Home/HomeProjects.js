@@ -30,7 +30,7 @@ function HomeProjects() {
               vision for redefining the art of living.
             </p>
             {projects.map((project) => (
-              <div className="col-12 col-md-4 px-4" key={project.id}>
+              <div className="col-12 col-md-4 px-md-4" key={project.id}>
                 <div className="project-class ">
                   <div
                     className="customs-card"
@@ -55,7 +55,7 @@ function HomeProjects() {
               </div>
               
             ))}
-           <div className="col-12 col-lg-8 ">
+           <div className="col-12 col-lg-8 mt-3 mt-md-0">
            <iframe
             className="mx-auto d-block"
             width="100%"

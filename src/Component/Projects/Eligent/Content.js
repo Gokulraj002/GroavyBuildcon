@@ -48,7 +48,7 @@ function Content() {
           <div className="col-12 col-lg-6  aos" data-aos="fade-down-right">
             <EligentYoutupe />
           </div>
-          <div className="col-12 col-lg-6 aos" data-aos="fade-down-left">
+          <div className="col-12 col-lg-6 aos  ps-4 ps-md-2" data-aos="fade-down-left">
             <div className="content-details  text-white">
               <p className="para-color1">
                 <FaCheckCircle className="icon-color me-2 " />
